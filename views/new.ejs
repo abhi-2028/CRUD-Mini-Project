@@ -1,0 +1,17 @@
+<%- include("includes/header.ejs") %>
+
+    <body>
+        <form method="post" action="/posts">
+            <div class="container">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label" >Enter Your Username</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" name="username">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Write Your Post</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+                </div>
+                <button>Submit</button>
+            </div>
+        </form>
+        <%- include("includes/footer.ejs") %>

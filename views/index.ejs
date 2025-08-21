@@ -1,0 +1,28 @@
+<%- include("includes/header.ejs") %>
+<style>
+    h1{
+        display: inline;
+    }
+    .btn-danger{
+        position: absolute;
+        right: 10px;
+        margin-top: 5px;
+    }
+</style>
+<body>
+    <h1>Quora Posts</h1>
+    <a class="btn btn-danger" href="http://localhost:8080/posts/new" role="button">Add</a>
+    <% for(let post of posts) { %>
+        <div class="post">
+            <h3 class="user">@<%= post.username %></h3>
+            <h4 class="content"><%= post.content %></h4>
+            <a href="http://localhost:8080/posts/<%= post.id %>">View Post</a> <br>
+            <a href="http://localhost:8080/posts/<%= post.id %>/edit">Edit</a> 
+            <form action="/posts/<%=post.id%>?_method=DELETE" method="post">
+                <button>Delete Post</button>
+            </form>
+        </div>
+        <br>
+    <% } %>
+
+<%- include("includes/footer.ejs") %>
